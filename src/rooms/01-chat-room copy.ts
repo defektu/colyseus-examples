@@ -15,12 +15,10 @@ export class ChatRoom extends Room {
 
     onJoin (client) {
         this.broadcast("messages", `${ client.sessionId } joined.`);
-        this.broadcast("user-connected", `${ client.sessionId }`);
     }
 
     onLeave (client) {
         this.broadcast("messages", `${ client.sessionId } left.`);
-        this.broadcast("user-disconnected", `${ client.sessionId }`);
     }
 
     onDispose () {
